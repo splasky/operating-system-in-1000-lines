@@ -32,6 +32,8 @@ prompt:
         }
         else if (strcmp(cmdline, "writefile") == 0)
             writefile("hello.txt", "Hello from shell!\n", 19);
+        else if (strcmp(cmdline, "sendtrap") == 0)
+            __asm__ __volatile__("unimp");   
         else
             printf("unknown command: %s\n", cmdline);
     }
